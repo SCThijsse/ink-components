@@ -1,6 +1,6 @@
 {
   "name": "@scthijsse/ink-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "build",
   "module": "src",
@@ -10,7 +10,7 @@
     "url": "https://github.com/scthijsse/ink-components.git"
   },
   "scripts": {
-    "build": "babel src --out-dir build",
+    "build": "babel src --out-dir build --copy-files",
     "lint": "standard --parser babel-eslint --env jest"
   },
   "dependencies": {
