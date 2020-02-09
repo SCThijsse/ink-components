@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { arrRotate } from '../../utils'
 import { Box, useStdin } from 'ink'
 import { CheckBox, Indicator, Item } from './SelectInput/index'
 
@@ -8,6 +7,17 @@ const ARROW_UP = '\u001B[A'
 const ARROW_DOWN = '\u001B[B'
 const ENTER = '\r'
 const SPACE = ' '
+
+const arrRotate = (input, n) => {
+  if (!Array.isArray(input)) {
+    throw new TypeError(`Expected an array, got ${typeof input}`)
+  }
+
+  const x = input.slice()
+  const num = typeof n === 'number' ? n : 0
+
+  return x.splice(-num % x.length).concat(x)
+}
 
 export const useSelectionList = ({
   items,
