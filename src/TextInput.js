@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Color, useStdin } from 'ink'
+import { Color, Text, useStdin } from 'ink'
 import chalk from 'chalk'
 
 const ARROW_UP = '\u001B[A'
@@ -136,7 +136,7 @@ export const TextInput = ({
 
   return (
     <Color dim={!hasValue && placeholder}>
-      {placeholder ? (hasValue ? renderedValue : placeholder) : renderedValue}
+      <Text>{placeholder ? (hasValue ? renderedValue : placeholder) : renderedValue}</Text>
     </Color>
   )
 }

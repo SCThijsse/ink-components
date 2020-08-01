@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Color } from 'ink'
+import { Box, Color, Text } from 'ink'
 import PropTypes from 'prop-types'
 import { SelectInput, TextInput } from './'
 import { Indicator, Item } from './SelectInput/index'
@@ -25,7 +25,7 @@ export const AutoComplete = ({
   return (
     <Box flexDirection='column'>
       <Box>
-        {prompt !== '' && <Color green>{prompt}</Color>}
+        <Text>{prompt !== '' && <Color green>{prompt}</Color>}</Text>
         <TextInput
           value={value}
           placeholder={placeholder}

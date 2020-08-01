@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Box } from 'ink'
+import { Text } from 'ink'
 import spinners from './spinners.json'
 
 export const Spinner = ({ type }) => {
@@ -17,11 +17,7 @@ export const Spinner = ({ type }) => {
     return () => clearInterval(timer)
   }, [frame, setFrame, spinner.frames, spinner.interval])
 
-  return (
-    <Box>
-      {spinner.frames[frame]}
-    </Box>
-  )
+  return <Text>{spinner.frames[frame]}</Text>
 }
 
 Spinner.propTypes = {
